@@ -52,7 +52,7 @@ const TaskReport = () => {
         return;
       }
   
-      const { data } = await axios.get('http://localhost:5000/api/tasks/report', {
+      const { data } = await axios.get('https://taskmanagement-eosin.vercel.app/api/tasks/report', {
         headers: {
           Authorization: `Bearer ${token}`, // Include the token in the Authorization header
         },

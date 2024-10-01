@@ -15,7 +15,7 @@ const TaskList = () => {
         return;
       }
   
-      const { data } = await axios.get('http://localhost:5000/api/tasks', {
+      const { data } = await axios.get('https://taskmanagement-eosin.vercel.app/api/tasks', {
         params: { ...filters, page },
         headers: {
           Authorization: `Bearer ${token}`,  // Include the token in the Authorization header

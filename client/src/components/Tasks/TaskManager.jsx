@@ -12,7 +12,7 @@ const TaskManager = () => {
   // Fetch all tasks
   const fetchTasks = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/tasks', {
+      const { data } = await axios.get('https://taskmanagement-eosin.vercel.app/api/tasks', {
         headers: { Authorization: `Bearer ${token}` },
         params: filters,
       });
@@ -26,7 +26,7 @@ const TaskManager = () => {
   const createTask = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/tasks', taskData, {
+      await axios.post('https://taskmanagement-eosin.vercel.app/api/tasks', taskData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTaskData({ title: '', description: '', priority: '', status: '' }); // Reset form
@@ -39,7 +39,7 @@ const TaskManager = () => {
   // Update a task
   const updateTask = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/tasks/${id}`, taskData, {
+      await axios.put(`https://taskmanagement-eosin.vercel.app/api/tasks/${id}`, taskData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks(); // Refresh tasks list
@@ -52,7 +52,7 @@ const TaskManager = () => {
   // Delete a task
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+      await axios.delete(`https://taskmanagement-eosin.vercel.app/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks(); // Refresh tasks list
